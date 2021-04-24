@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+
+
+
 const circleR = 80;
 const circleDasharray = 2 * Math.PI * circleR;
+
+
 
 @Component({
   selector: 'app-tab3',
@@ -27,6 +32,8 @@ export class Tab3Page {
 
 
   constructor() {}
+  
+  
 
   startTimer(duration: number){
     this.state = 'start';
@@ -50,6 +57,11 @@ export class Tab3Page {
 
   }
 
+  swapDuration(){
+    this.startDuration = this.startDuration === 1 ? 0/5 : 1;
+
+  }
+
   updateTimeValue(){
     let minutes: any = this.timer / 60;
     let seconds: any = this.timer % 60;
@@ -60,7 +72,7 @@ export class Tab3Page {
     const text = minutes + ':' + seconds;
     this.time.next(text);
 
-    const totalTime = this.startDuration * 60;
+    const totalTime = this.startDuration * 5;
     const percentage = ((totalTime - this.timer)/ totalTime) * 100;
     this.percent.next(percentage);
 

@@ -10,15 +10,22 @@
   
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Timer</ion-title>
     </ion-toolbar>
   </ion-header>
-<ion-row class ="ion-justify-content-center"></ion-row>
-  <svg>
+<ion-row class ="ion-justify-content-center">
+
+  <!-- picker component -->
+
+  <ion-button expand="block" onclick="openPicker()">Show Single Column Picker</ion-button>
+
+  <!-- Timer component -->
+  <svg
     id= "progress-circle"
     width="50vh"
     height = "50vh"
     viewBox="0 0 200 200"
+    >
 
     <linearGradient id = "linearColors1" x1="0" y1="0" x2="1" y2 = "1">
       <stop offset = "0%" stop-color="#ddd6f3"></stop>
@@ -43,7 +50,7 @@
     [attr.stroke-dasharray]="circleDasharray"
     [attr.stroke-dashoffset]="percentageOffset(percent | async)"
     />
-    <text x ="50%" y ="55" class="timer-text">{{ time | async }}</text>
+    <text x ="50%" y ="55%" class="timer-text">{{ time | async }}</text>
 
   </svg>
   
@@ -53,9 +60,9 @@
 
   
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <!-- <app-explore-container name="Tab 3 page"></app-explore-container> -->
 </ion-content>
 <ion-footer>
-  <ion-button *ngIF="state === 'stop'" expand="block" color= "primary" (click)="startTimer(startDuration)">START</ion-button>
-  <ion-button *ngIF="state === 'start'" expand="block" color= "danger" (click)="stopTimer()">STOP</ion-button>
+  <ion-button *ngIf="state === 'stop'" expand="block" color= "primary" (click)="startTimer(startDuration)">START</ion-button>
+  <ion-button *ngIf="state === 'start'" expand="block" color= "danger" (click)="stopTimer()">STOP</ion-button>
 </ion-footer>
