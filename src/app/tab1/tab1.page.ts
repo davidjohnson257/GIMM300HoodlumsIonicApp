@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
@@ -11,7 +11,22 @@ export class Tab1Page {
   
 
 
-  constructor() {}
+  constructor(/*private renderer: Renderer2*/) {}
+ 
+ 
+  /*onToggleColorTheme(event)
+  {
+        console.log(event.detail.checked);
 
+  if(event.detail.checked)
+    {
+      //document.body.setAttribute('color-theme','dark');
+      this.renderer.setAttribute(document.body,"color-theme", "light");
+    }else
+    {
+      this.renderer.setAttribute(document.body, "color-theme", "dark");
+       //document.body.setAttribute('color-theme','light');
+    }
+  }*/
 
 }
