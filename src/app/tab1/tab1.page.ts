@@ -14,19 +14,21 @@ export class Tab1Page {
   constructor(/*private renderer: Renderer2*/) {}
  
  
-  /*onToggleColorTheme(event)
+  toggleTheme(event)
   {
-        console.log(event.detail.checked);
+        
 
   if(event.detail.checked)
     {
-      //document.body.setAttribute('color-theme','dark');
-      this.renderer.setAttribute(document.body,"color-theme", "light");
+      document.body.setAttribute('color-theme','dark');
+      //this.renderer.setAttribute(document.body,"color-theme", "light");
+      console.log(event.detail.checked);
     }else
     {
-      this.renderer.setAttribute(document.body, "color-theme", "dark");
-       //document.body.setAttribute('color-theme','light');
+      //this.renderer.setAttribute(document.body, "color-theme", "dark");
+       document.body.setAttribute('color-theme','light');
+       console.log(event.detail.checked);
     }
-  }*/
+  }
 
 }
