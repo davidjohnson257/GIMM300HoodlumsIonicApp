@@ -1,8 +1,17 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
+  <ion-toolbar color= "primary">
+    <ion-row size="12">
+      
+    <ion-title align-item="left" >
+      Home
     </ion-title>
+    <ion-item align-item="right" color="#24AF59">
+      <ion-label>
+        Light
+      </ion-label>
+      <ion-toggle slot="end" (ionChange)='toggleTheme($event)'></ion-toggle>
+    </ion-item>
+  </ion-row >
   </ion-toolbar>
 </ion-header>
 
@@ -17,15 +26,19 @@
   <app-explore-container name="Tab 1 page"></app-explore-container>
   
 </ion-content> -->
+
 <ion-content>
+  <img  class="no-scroll" height="550px" overflow="hidden"background-size=" contain" src="https://i.pinimg.com/474x/86/84/f6/8684f698d13261f445c53101f9630987--forest-road-dark-forest.jpg" >
+  <div class="container">
+    
+    <div class="text-block">
+      
+          <h3 class="Sans" >Welcome to <br> Time Buddy</h3>
+    </div>
+    
+  </div>
   <ion-grid fixed>
-    <ion-col size="12">
-      <ion-item>
-        <ion-label>
-          Dark Theme
-        </ion-label>
-        <ion-toggle slot="end" (ionChange)='toggleTheme($event)'></ion-toggle>
-      </ion-item>
-    </ion-col>
+    
+    
   </ion-grid>
 </ion-content>

@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color= "primary">
     <ion-title>
       Timer
     </ion-title>
@@ -8,7 +8,7 @@
 
 <ion-content [fullscreen]="true">
   
-  <ion-header collapse="condense">
+  <ion-header  collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Timer</ion-title>
     </ion-toolbar>
@@ -18,7 +18,7 @@
 
   <!-- picker component -->
 
-  <ion-button expand="block" onclick="openPicker()">Show Single Column Picker</ion-button>
+  <ion-button expand="block"  onclick="openPicker()">Show Single Column Picker</ion-button>
 
   <!-- Timer component -->
   <div>
@@ -30,8 +30,8 @@
     >
 
     <linearGradient id = "linearColors1" x1="0" y1="0" x2="1" y2 = "1">
-      <stop offset = "0%" stop-color="#97F1A7"></stop>
       <stop offset = "100%" stop-color="#21CB3F"></stop>
+      <stop offset = "100%" stop-color="#97F1A7"></stop>
     </linearGradient>
     
     <circle 
@@ -39,7 +39,7 @@
     cy = "50%"
     [attr.r]="circleR"
     fill = "none"
-    stroke="#000000"
+   
     stroke-width="12"
     />
     <circle
