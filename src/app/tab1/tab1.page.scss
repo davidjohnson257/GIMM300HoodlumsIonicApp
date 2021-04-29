@@ -1,6 +1,11 @@
-.text-block {
-    position: absolute;
-    bottom: 250px;
+
+ ion-content.background{
+  --background: url('https://media.giphy.com/media/xUA7b5B6G21I3uKNDW/giphy.gif') 0 0/100% 100% no-repeat;
+  
+    }
+    .text-block {
+    position:block;
+    
     right: 20px;
     
     background-color: rgba(90, 80, 80, 0.74);
@@ -10,17 +15,34 @@
     height:125px;
     text-align: center
     
-    }
-    .aligncenter{
-        text-align: center
-    }
-    .container {
-        
-        position: relative;
-      }
-      .Sans{
-          
-        font-size: 2.6rem;
-      }
+  }
+  .aligncenter{
+    text-align: center
+}
+.container {
+     margin-top:50%;
+    position: block;
+}
+.Sans{
+  font-family:Varela !important;
+  font-size:2.6em;
+    
+}
+.no-scroll {
+    --overflow: hidden;
+}
+.float{
+  float:right;
+}
+    
+    
+    
+    
+    
+    
+    
+    
+   
+
       
   

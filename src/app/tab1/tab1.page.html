@@ -1,18 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar color= "primary">
-    <ion-row size="12">
+    <ion-row size="10">
       
-    <ion-title align-item="left" >
+    <ion-title  >
       Home
     </ion-title>
-    <ion-item align-item="right" color="#24AF59">
+  
+  
+    <ion-item class="float"  color="#24AF59">
       <ion-label>
-        Light
+       Mode
       </ion-label>
       <ion-toggle slot="end" (ionChange)='toggleTheme($event)'></ion-toggle>
     </ion-item>
+  
   </ion-row >
   </ion-toolbar>
+  <ion-row color="primary" size="5"> </ion-row>
 </ion-header>
 
 <!-- <ion-content [fullscreen]="true">
@@ -27,8 +31,8 @@
   
 </ion-content> -->
 
-<ion-content>
-  <img  class="no-scroll" height="550px" overflow="hidden"background-size=" contain" src="https://i.pinimg.com/474x/86/84/f6/8684f698d13261f445c53101f9630987--forest-road-dark-forest.jpg" >
+<ion-content class="background" >
+  
   <div class="container">
     
     <div class="text-block">
