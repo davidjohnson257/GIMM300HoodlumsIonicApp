@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { PickerController } from '@ionic/angular';
 import { BehaviorSubject } from 'rxjs';
+import { PickerOptions} from '@ionic/core'
+
 
 
 
@@ -16,6 +19,8 @@ const circleDasharray = 2 * Math.PI * circleR;
 })
 export class Tab3Page {
 
+  
+
   time: BehaviorSubject<string> = new BehaviorSubject('00:00');
   percent: BehaviorSubject<number> = new BehaviorSubject(100);
 
@@ -24,21 +29,69 @@ export class Tab3Page {
   startDuration = 1;
 
 
+
   circleR = circleR;
   circleDasharray = circleDasharray;
 
   state: 'start' | 'stop' = 'stop';
 
 
+  framework ='';
+  constructor(private pickerCtrl: PickerController ) {}
+  
+  async showBasicPicker() {
+  
 
-  constructor() {}
+    let opts: PickerOptions = {
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'Done'
+        }
+        
+        
+      ],
+      columns: [
+        {
+          name: 'framework',
+          options: [
+            {text: '10', value: '10'},
+            {text: '15', value: '15'},
+            {text: '20', value: '20'},
+            {text: '25', value: '25'},
+            {text: '30', value: '30'},
+            {text: '35', value: '35'},
+            {text: '40', value: '40'},
+            {text: '45', value: '45'},
+            {text: '50', value: '50'},
+            {text: '55', value: '55'},
+            {text: '60', value: '60'}
+          ]
+        }
+
+      ]
+    };
+    let picker = await this.pickerCtrl.create(opts);
+    
+    picker.present();
+    picker.onDidDismiss().then(async data => {
+      let col = await picker.getColumn('framework');
+      console.log('col:',col);
+      this.framework = col.options[col.selectedIndex].text;
+      this.startDuration = col.options[col.selectedIndex].value;
+    })
+
   
-  
+    
+}
 
   startTimer(duration: number){
     this.state = 'start';
     clearInterval(this.interval);
-    this.timer = duration * 5;
+    this.timer = duration * 60;
     this.updateTimeValue();
     this.interval = setInterval(()=>{
       this.updateTimeValue();

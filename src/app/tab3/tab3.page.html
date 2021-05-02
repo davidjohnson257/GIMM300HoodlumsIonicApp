@@ -17,9 +17,17 @@
 <ion-row class ="ion-justify-content-center">
 
   <!-- picker component -->
+  <div><h3>Pick an amount of time</h3></div>
 
-  <ion-button expand="block"  onclick="openPicker()">Show Single Column Picker</ion-button>
+  <div>
 
+  <ion-item class ="ion-justify-content-center">
+    
+    <ion-label > </ion-label>
+    <ion-label color="primary" position="fixed">{{ framework }}</ion-label>
+    <ion-button slot="end" fill="fixed"(click)="showBasicPicker()">Mins</ion-button>
+  </ion-item>
+</div>
   <!-- Timer component -->
   <div>
   <svg
